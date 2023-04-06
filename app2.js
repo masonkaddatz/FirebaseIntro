@@ -68,4 +68,183 @@ let atleticomadrid = {
 
 // Task 2
 
+// Queries
 // Question 1:
+// db.collection("teams")
+//   .where("country", "==", "Spain")
+//   .get()
+//   .then((response) => {
+//     let docs = response.docs;
+//     // loop through docs array
+//     docs.forEach((doc) => {
+//       console.log(doc.data().team_name);
+//     });
+//   });
+
+// Question 2:
+// db.collection("teams")
+//   .where("country", "==", "Spain")
+//   .where("city", "==", "Madrid")
+//   .get()
+//   .then((response) => {
+//     let docs = response.docs;
+//     // loop through docs array
+//     docs.forEach((doc) => {
+//       console.log(doc.data().team_name);
+//     });
+//   });
+
+// Question 3:
+// db.collection("teams")
+//   .where("city", "==", "na")
+//   .get()
+//   .then((response) => {
+//     let docs = response.docs;
+//     // loop through docs array
+//     docs.forEach((doc) => {
+//       console.log(doc.data().team_name);
+//     });
+//   });
+
+// Question 4:
+// db.collection("teams")
+//   .where("country", "!=", "Spain")
+//   .get()
+//   .then((response) => {
+//     let docs = response.docs;
+//     // loop through docs array
+//     docs.forEach((doc) => {
+//       console.log(doc.data().team_name);
+//     });
+//   });
+
+// Question 5:
+// db.collection("teams")
+//   .where("country", "not-in", ["Spain", "England"])
+//   .get()
+//   .then((response) => {
+//     let docs = response.docs;
+//     // loop through docs array
+//     docs.forEach((doc) => {
+//       console.log(doc.data().team_name);
+//     });
+//   });
+
+// Question 6:
+// db.collection("teams")
+//   .where("country", "==", "Spain")
+//   .where("worldwide_fans_in_millions", ">", 700)
+//   .get()
+//   .then((response) => {
+//     let docs = response.docs;
+//     // loop through docs array
+//     docs.forEach((doc) => {
+//       console.log(doc.data().team_name);
+//     });
+//   });
+
+// Question 7:
+// db.collection("teams")
+//   .where("worldwide_fans_in_millions", ">=", 500)
+//   .where("worldwide_fans_in_millions", "<=", 600)
+//   .get()
+//   .then((response) => {
+//     let docs = response.docs;
+//     // loop through docs array
+//     docs.forEach((doc) => {
+//       console.log(doc.data().team_name);
+//     });
+//   });
+
+// Question 8:
+// db.collection("teams")
+//   .where("top_scorers", "array-contains", "Ronaldo")
+//   .get()
+//   .then((response) => {
+//     let docs = response.docs;
+//     // loop through docs array
+//     docs.forEach((doc) => {
+//       console.log(doc.data().team_name);
+//     });
+//   });
+
+// Question 9:
+// db.collection("teams")
+//   .where("top_scorers", "array-contains-any", ["Ronaldo", "Maradona", "Messi"])
+//   .get()
+//   .then((response) => {
+//     let docs = response.docs;
+//     // loop through docs array
+//     docs.forEach((doc) => {
+//       console.log(doc.data().team_name);
+//     });
+//   });
+
+// Task 3
+
+// updating existing data
+// Question a1:
+// db.collection("teams").doc("x9Joz5znHo62VSmw3I0l").update({
+//   team_name: "Real Madrid FC",
+//   worldwide_fans_in_millions: 811,
+// });
+
+// Question a2:
+// db.collection("teams").doc("pf2zjkOwrtuqItpb68AW").update({
+//   team_name: "FC Barcelona",
+//   worldwide_fans_in_millions: 747,
+// });
+
+// Question a1 (part 2):
+// db.collection("teams")
+//   .doc("x9Joz5znHo62VSmw3I0l")
+//   .update({
+//     top_scorers: firebase.firestore.FieldValue.arrayRemove("Hazard"),
+//   });
+// db.collection("teams")
+//   .doc("x9Joz5znHo62VSmw3I0l")
+//   .update({
+//     top_scorers: firebase.firestore.FieldValue.arrayUnion("Crispo"),
+//   });
+
+// Question a2 (part 2):
+// db.collection("teams")
+//   .doc("pf2zjkOwrtuqItpb68AW")
+//   .update({
+//     top_scorers: firebase.firestore.FieldValue.arrayRemove("Puyol"),
+//   });
+// db.collection("teams")
+//   .doc("pf2zjkOwrtuqItpb68AW")
+//   .update({
+//     top_scorers: firebase.firestore.FieldValue.arrayUnion("Deco"),
+//   });
+
+// Question b1:
+// db.collection("teams")
+//   .doc("x9Joz5znHo62VSmw3I0l")
+//   .update({
+//     color: {
+//       home: "white",
+//       away: "black",
+//     },
+//   });
+
+// Question b2:
+// db.collection("teams")
+//   .doc("pf2zjkOwrtuqItpb68AW")
+//   .update({
+//     color: {
+//       home: "red",
+//       away: "gold",
+//     },
+//   });
+
+// Question c1:
+// db.collection("teams").doc("x9Joz5znHo62VSmw3I0l").update({
+//   "color.away": "purple",
+// });
+
+// Question c2:
+// db.collection("teams").doc("pf2zjkOwrtuqItpb68AW").update({
+//   "color.away": "pink",
+// });
